@@ -55,6 +55,7 @@ function BlurImage({ image }: { image: Image }) {
           onLoadingComplete={() => setLoading(false)}
         />
       </div>
+      xD
       <h3 className="mt-4 text-sm text-gray-700">Lee Robinson</h3>
       <p className="mt-1 text-lg font-medium text-gray-900">@leeerob</p>
     </a>
@@ -67,14 +68,14 @@ export async function getStaticProps() {
     process.env.SUPABASE_SERVICE_ROLE_KEY || ''
   )
 
-  await supabaseAdmin.from('images').insert([
-    {
-      name: 'Pedro Duarte',
-      href: 'https://twitter.com/peduarte/status/1463897468383412231',
-      username: '@peduarte',
-      imageSrc: 'https://pbs.twimg.com/media/FFDOtLkWYAsWjTM?format=jpg',
-    },
-  ])
+  // await supabaseAdmin.from('images').insert([
+  //   {
+  //     name: 'Pedro Duarte',
+  //     href: 'https://twitter.com/peduarte/status/1463897468383412231',
+  //     username: '@peduarte',
+  //     imageSrc: 'https://pbs.twimg.com/media/FFDOtLkWYAsWjTM?format=jpg',
+  //   },
+  // ])
 
   const { data } = await supabaseAdmin.from('images').select('*').order('id')
   return {
